@@ -29,7 +29,7 @@ Built using **Flask (Python)**, it filters and ranks cars from a real-world data
 4. Results are shown dynamically in a responsive web page  
 
 
-## 📚 Future Enhancements  
-- 🔮 Add Machine Learning model for car price prediction  
-- 🌐 Deploy the app using Render/Heroku  
-- 💬 Add chatbot for car insights and buying tips  
+##  Future Enhancements  
+-  Add Machine Learning model for car price prediction  
+-  Deploy the app using Render/Heroku  
+-  Add chatbot for car insights and buying tips  
