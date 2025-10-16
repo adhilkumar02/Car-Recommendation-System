@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Recommended Cars</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>OPTIMAL VEHICLE MATCHES</h1>
+
+        {% if results %}
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th>VEHICLE NAME</th>
+                        <th>FABRICATION YEAR</th>
+                        <th>PRICE (CREDITS)</th>
+                        <th>OPERATIONAL KM</th>
+                        <th>ENERGY SOURCE</th>
+                        <th>DRIVE SYSTEM</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for car in results %}
+                    <tr>
+                        <td>{{ car.name }}</td>
+                        <td>{{ car.year }}</td>
+                        <td>{{ "{:,.0f}".format(car.selling_price) }}</td>
+                        <td>{{ "{:,.0f}".format(car.km_driven) }}</td>
+                        <td>{{ car.fuel }}</td>
+                        <td>{{ car.transmission }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p class="no-results">❌ No vehicle data found matching your parameters.</p>
+        {% endif %}
+
+        <a href="{{ url_for('index') }}" class="back-button">
+            RESET SEARCH PARAMETERS
+        </a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAR DATA SYSTEM</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>FIND YOUR BEST CAR</h1>
+
+        <form method="POST" class="form-grid">
+            <div>
+                <label for="min_price">Min Price</label>
+                <input type="number" id="min_price" name="min_price" placeholder="e.g., 50000">
+            </div>
+            <div>
+                <label for="max_price">Max Price</label>
+                <input type="number" id="max_price" name="max_price" placeholder="e.g., 500000">
+            </div>
+
+            <div>
+                <label for="fuel">Fuel Type</label>
+                <select id="fuel" name="fuel">
+                    <option value="">ALL ENERGY SOURCES</option>
+                    <option value="Petrol">PETROL</option>
+                    <option value="Diesel">DIESEL</option>
+                    <option value="CNG">CNG</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="transmission">Transmission</label>
+                <select id="transmission" name="transmission">
+                    <option value="">ANY DRIVE SYSTEM</option>
+                    <option value="Manual">MANUAL</option>
+                    <option value="Automatic">AUTOMATIC</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="min_year">Min Fabrication Year</label>
+                <input type="number" id="min_year" name="min_year" placeholder="e.g., 2015">
+            </div>
+            <div>
+                <label for="max_km">Max OPERATIONAL KM</label>
+                <input type="number" id="max_km" name="max_km" placeholder="e.g., 50000">
+            </div>
+
+            <button class="button" type="submit">
+                <svg class="svgIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                     <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm50.7-186.9L162.4 380.6c-19.4 7.5-38.5-11.6-31-31l55.5-144.3c3.3-8.5 9.9-15.1 18.4-18.4l144.3-55.5c19.4-7.5 38.5 11.6 31 31L325.1 306.7c-3.2 8.5-9.9 15.1-18.4 18.4zM288 256a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"/>
+                </svg>
+                <span>SEARCH</span>
+            </button>
+        </form>
+
+        {% if error %}
+            <p class="error">DATA ERROR: {{ error }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
