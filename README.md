@@ -19,7 +19,7 @@ Built using **Flask (Python)**, it filters and ranks cars from a real-world data
 - **Backend:** Flask (Python)  
 - **Frontend:** HTML, CSS  
 - **Data Analysis:** Pandas, NumPy  
-- **Dataset:** Car details dataset (from Kaggle or custom CSV file)  
+- **Dataset:** Car details dataset (Kaggle)  
 
 
 ##  How It Works  
